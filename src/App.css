@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+  --primary-color: #ff9b2f;             /* Amarelo */
+  --primary-color-dark: #e88a1b;        /* Amarelo escuro */
+
+  --text-observation: #000000;          /* Cor do textos menores */
+  --text-observation: #333;             /* Cor do textos menores */
+  --background-color: #f5f5f5;          /* Fundo menos intenso */
+}
+
+*{
+  font-family: "JetBrains Mono";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

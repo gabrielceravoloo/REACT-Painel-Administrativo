@@ -16,13 +16,11 @@ const Login = () => {
 
   return (
     <Container>
-      <Row className="d-flex justify-content-md-center w-100 h-100">
-        <Col md={6} className="bg-dark text-light rounded d-flex flex-column align-items-center p-4">
-
-          <img src="/logo.png" alt="Logo do App" width={120} height={120} className="mb-3" />
-
-          <Form onSubmit={handleSubmit} className='d-flex flex-column align-items-center'>
-            <Form.Group controlId="formBasicEmail" className='mb-3'>
+      <Row className="justify-content-md-center mt-5">
+        <Col md={6}>
+          <h3>Login</h3>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
@@ -33,7 +31,7 @@ const Login = () => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword" className='mb-3'>
+            <Form.Group controlId="formBasicPassword">
               <Form.Label>Senha</Form.Label>
               <Form.Control
                 type="password"
@@ -44,15 +42,13 @@ const Login = () => {
               />
             </Form.Group>
 
-            <Button type="submit" className="mt-3 btn-warning">
+            <Button variant="primary" type="submit" className="mt-3">
               Entrar
             </Button>
           </Form>
-
-          <p className="mt-3 text-center">
-            Não tem cadastro? <Link to="/cadastro" className='text-warning'>Clique aqui!</Link>
+          <p className="mt-3">
+            Não tem cadastro? <Link to="/cadastro">Clique aqui!</Link>
           </p>
-
         </Col>
       </Row>
     </Container>

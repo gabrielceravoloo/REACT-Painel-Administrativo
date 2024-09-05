@@ -9,9 +9,13 @@ const BarraNavegacao = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavDropdown title="Livros" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/livros">Gerenciar</NavDropdown.Item>
-                <NavDropdown.Item href="#">Relatórios</NavDropdown.Item>
+              <NavDropdown title="Tabelas" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/alunos">Alunos</NavDropdown.Item>
+                <NavDropdown.Item href="#">...</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Estagios" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/estagios">Estagios</NavDropdown.Item>
+                <NavDropdown.Item href="#">...</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

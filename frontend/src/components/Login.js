@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
@@ -12,14 +11,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     e.preventDefault();
-    try {
+    try 
+    {
       const response = await axios.post('http://localhost:8000/api/auth/login', {
         email: email, 
         senha: senha
       });
-      localStorage.setItem('token', response.data.token); // Armazena o token JWT
+      localStorage.setItem('token', response.data.token);
       navigate('/dashboard');
-    } catch (error) {
+    } 
+    catch (error) 
+    {
       console.error('Erro ao fazer login:', error.response.data);
       alert('Login falhou. Verifique suas credenciais.');
     }

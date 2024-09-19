@@ -15,17 +15,19 @@ const NovoAluno = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const token = localStorage.getItem('token'); // Obter o token do localStorage
-            const novoAluno = { nome: nome, email: email, nascimento: nascimento, curso: curso }; // Estrutura de dados para a API
+            const token = localStorage.getItem('token');
+            const novoAluno = { nome: nome, email: email, nascimento: nascimento, curso: curso };
             await axios.post('http://localhost:8000/api/alunos/novo', novoAluno, {
                 headers: {
-                    Authorization: `Bearer ${token}` // Passar o token no cabeçalho
+                    Authorization: `Bearer ${token}`
                 }
             });
 
             alert('Aluno cadastrado com sucesso!');
-            navigate('/alunos'); // Redirecionar para a lista de alunos após o cadastro
-        } catch (error) {
+            navigate('/alunos');
+        } 
+        catch (error) 
+        {
             console.error('Erro ao cadastrar o aluno:', error);
             alert('Falha ao cadastrar o aluno. Tente novamente.');
         }

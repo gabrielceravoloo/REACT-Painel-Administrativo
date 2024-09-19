@@ -14,34 +14,36 @@ const Cadastro = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!checkboxChecked) {
-      alert('Você deve concordar com as Políticas e Diretrizes.');
+      alert('Você deve aceitar as Políticas e Diretrizes para se cadastrar.');
       return;
     }
-    try {
+    try 
+    {
       await axios.post('http://localhost:8000/api/auth/cadastrar', {
-        nome: nome, 
-        email: email,
-        senha: senha,
-        nivel: nivel
+        nome,
+        email,
+        senha,
+        nivel
       });
       alert('Cadastro realizado com sucesso!');
       navigate('/');
-    } catch (error) {
+    } 
+    catch (error) 
+    {
       console.error('Erro ao cadastrar:', error);
       alert('Falha no cadastro. Tente novamente.');
     }
   };
 
   return (
-
     <Container>
-    <Row className="justify-content-md-center mt-5">
-      <Col md={6}>
-        <div className="d-flex align-items-center justify-content-center mb-3">
-          <img src="/Logo.png" className="me-3" alt="Logo" style={{ width: '40px' }} />
-          <h2>EstagioHUB</h2>
-        </div>
-        <h5 className="text-center my-4">Junte-se hoje à EstagioHUB</h5>
+      <Row className="justify-content-md-center mt-5">
+        <Col md={6}>
+          <div className="d-flex align-items-center justify-content-center mb-3">
+            <img src="/Logo.png" className="me-3" alt="Logo" style={{ width: '40px' }} />
+            <h2>EstagioHUB</h2>
+          </div>
+          <h5 className="text-center my-4">Junte-se hoje à EstagioHUB</h5>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formNome">
               <Form.Label>Nome</Form.Label>
@@ -98,28 +100,25 @@ const Cadastro = () => {
               <Form.Check
                 type="checkbox"
                 label="Estou de acordo com as Políticas e Diretrizes"
+                className='checkbox-custom'
                 checked={checkboxChecked}
                 onChange={(e) => setCheckboxChecked(e.target.checked)}
-                className='checkbox-custom'
                 required
               />
             </Form.Group>
-          <Button variant="danger" type="submit" className="mt-3 button-custom">
-            Cadastrar-se
-          </Button>
+            
+            <Button variant="danger" type="submit" className="mt-3 button-custom">
+              Cadastrar-se
+            </Button>
 
-          <p className="text-center my-3">
-          Já tem uma conta? <Link to="/" className="text-danger">Acessar Agora</Link>
-          </p>
-
-        </Form>
-
-      </Col>
-    </Row>
+            <p className="text-center my-3">
+              Já tem uma conta? <Link to="/" className="text-danger">Acessar Agora</Link>
+            </p>
+          </Form>
+        </Col>
+      </Row>
     </Container>
-
   );
 };
 
 export default Cadastro;
-

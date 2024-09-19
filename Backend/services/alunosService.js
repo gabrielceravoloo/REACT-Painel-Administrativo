@@ -2,8 +2,8 @@
 const { Alunos } = require('../models');
 
 const alunosService = {
-    async novoAluno(nome, autor, valor) {
-        return Alunos.create({ nome, autor, valor });
+    async novoAluno(nome, email, nascimento, curso) {
+        return Alunos.create({ nome, email, nascimento, curso });
     },
 
     async getAlunos() {
@@ -18,12 +18,13 @@ const alunosService = {
             return aluno;
     },
 
-    async alterarAluno(id, nome, autor, valor) {
+    async alterarAluno(id, nome, email, nascimento, curso) {
         const aluno = await Alunos.findByPk(id);
         if (!aluno) throw new Error('Aluno não encontrado');
         aluno.nome = nome;
-        aluno.autor = autor;
-        aluno.valor = valor;
+        aluno.email = email;
+        aluno.nascimento = nascimento;
+        aluno.curso = curso;
         return aluno.save();
     },
 

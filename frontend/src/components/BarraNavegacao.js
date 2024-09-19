@@ -13,10 +13,6 @@ const BarraNavegacao = () => {
                 <NavDropdown.Item href="/alunos">Alunos</NavDropdown.Item>
                 <NavDropdown.Item href="#">...</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Estagios" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/estagios">Estagios</NavDropdown.Item>
-                <NavDropdown.Item href="#">...</NavDropdown.Item>
-              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>

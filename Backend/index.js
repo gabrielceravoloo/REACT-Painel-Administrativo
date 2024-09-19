@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const { sequelize } = require('./models');
 const authRoutes = require('./routes/authRoutes');
 const alunosRoutes = require('./routes/alunosRoutes');
-const estagiosRoutes = require('./routes/estagiosRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -25,7 +24,6 @@ sequelize.sync({ force: false })
 // Rotas
 app.use('/api/auth', authRoutes);
 app.use('/api/alunos', alunosRoutes);
-app.use('/api/estagios', estagiosRoutes); 
 
 // Start the server
 const PORT = process.env.PORT || 3000;

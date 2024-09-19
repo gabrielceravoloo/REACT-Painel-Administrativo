@@ -1,5 +1,5 @@
 {
-  "name": "app-gestao-livros",
+  "name": "api-painel-administrativo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
